@@ -1,0 +1,14 @@
+CORENAME: LEO # 芯片型号 LEO/LEO_MPW
+PB_FILE: slot_model.pb # 输入的pb文件
+OUTPUT_FILE: slot.npu # 输出的NPU文件名
+NPU_UNIT: NPU64 # NPU设备类型
+COMPRESS: true # 压缩模型
+COMPRESS_QUANT_BITS: 8 # 量化成8bits
+COMPRESS_TYPE: LINEAR # 线性压缩
+OUTPUT_TYPE: raw # NPU文件的类型
+LEGACY_SPACE_METHOD: true
+INPUT_OPS:
+    model_slot/passage: [1, 200] # 输入结点名称和数据维度
+    model_slot/intent: [1]
+    model_slot/slot_name: [1]
+OUTPUT_OPS: [model_slot/ps_score,model_slot/pe_score]
