@@ -1,0 +1,47 @@
+{
+	"create_time":	1603095986175,
+	"events":	[{
+			"example_speech_template":	"<%动词-调小到%><%设备名-风扇_新风_空气净化器%><%设定值-极值最低_极值最小%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-调小到%",
+					"name":	"%动词-调小到%",
+					"value_source":	"svd",
+					"example_value":	"%动词-调小到%"
+				}, {
+					"value_expression":	"%设备名-风扇_新风_空气净化器%",
+					"name":	"%设备名-风扇_新风_空气净化器%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-风扇_新风_空气净化器%"
+				}, {
+					"value_expression":	"%设定值-极值最低_极值最小%",
+					"name":	"%设定值-极值最低_极值最小%",
+					"value_source":	"svd",
+					"example_value":	"%设定值-极值最低_极值最小%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_风速调到",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%设备名-风扇_新风_空气净化器%",
+					"name":	"%设备名%",
+					"value_source":	"context"
+				}, {
+					"value_expression":	"1/%设定值-极值最低_极值最小%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_风速调到",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

@@ -7,7 +7,7 @@
 #include <string.h>   
 #include <stdlib.h>   
   
-#define SERV_PORT   8000   
+#define SERV_PORT 57816  
   
 int main()  
 {  
@@ -27,6 +27,7 @@ int main()
   addr_serv.sin_port = htons(SERV_PORT);   //端口
   /* INADDR_ANY表示不管是哪个网卡接收到数据，只要目的端口是SERV_PORT，就会被该应用程序接收到 */  
   addr_serv.sin_addr.s_addr = htonl(INADDR_ANY);  //自动获取IP地址
+  printf("INADDR_ANY:%d\n",addr_serv.sin_addr.s_addr);
   len = sizeof(addr_serv);  
     
   /* 绑定socket */  

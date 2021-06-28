@@ -3,56 +3,112 @@
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>   //define O_WRONLY and O_RDONLY  
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <cstring>
+#include <iostream>
+#include <pthread.h>
 
-//芯片复位引脚: P1_16
-#define SYSFS_GPIO_EXPORT           "/sys/class/gpio/export"  
-#define SYSFS_GPIO_RST_PIN_VAL      "97"   
-#define SYSFS_GPIO_RST_DIR          "/sys/class/gpio/gpio97/direction"
-#define SYSFS_GPIO_RST_DIR_VAL      "OUT"  
-#define SYSFS_GPIO_RST_VAL          "/sys/class/gpio/gpio97/value"
-#define SYSFS_GPIO_RST_VAL_H        "1"
-#define SYSFS_GPIO_RST_VAL_L        "0"
 
-int main() 
+#define SYSFS_GPIO_EXPORT "/sys/class/gpio/export"
+
+#define SYSFS_GPIO_UNEXPORT "/sys/class/gpio/unexport"
+
+#define SYSFS_GPIO_RST_DIR_VAL "out"
+
+#define SYSFS_GPIO_RST_VAL_H "1"
+
+using namespace std;
+
+
+
+
+int control(string pinVal,string rstVal)
+{
+    int fd,ret;
+    //打开端口/sys/class/gpio# echo 96 > export
+    fd = open(SYSFS_GPIO_EXPORT, O_WRONLY  );
+    if (fd == -1)
+    {
+        printf("ERR: Radio hard reset pin open error.\n");
+        return EXIT_FAILURE;
+    }
+
+    // printf("pinVal.c_str = %s\n",pinVal.c_str());
+    ret = write(fd, pinVal.c_str(), sizeof(pinVal.c_str()));
+    // printf("ERR1 = %d\n",ret);
+    close(fd);
+
+    //设置端口方向/sys/class/gpio/gpio96# echo out > direction
+    string dir;
+    dir = "/sys/class/gpio/gpio" + pinVal + "/direction";
+    // printf("dir.c_str = %s\n",dir.c_str());
+    fd = open(dir.c_str(), O_RDWR );
+    if (fd == -1)
+    {
+        printf("ERR: Radio hard reset pin direction open error.\n");
+        return EXIT_FAILURE;
+    }
+
+    ret = write(fd, SYSFS_GPIO_RST_DIR_VAL, sizeof(SYSFS_GPIO_RST_DIR_VAL));
+    // printf("ERR2 = %d\n",ret);
+    close(fd);
+
+
+    string val;
+    val = "/sys/class/gpio/gpio"+pinVal+"/value";
+    // printf("val.c_str = %s\n",val.c_str());
+    fd = open(val.c_str(), O_RDWR);
+
+    if (fd == -1)
+    {
+        printf("ERR: Radio hard reset pin value open error.\n");
+        return EXIT_FAILURE;
+    }
+    
+    ret = write(fd, rstVal.c_str(), sizeof(rstVal.c_str()));
+    // printf("ERR3 = %d\n",ret);
+    close(fd);
+
+    //关闭端口 /sys/class/gpio/unexport
+    // fd = open(SYSFS_GPIO_UNEXPORT, O_WRONLY );
+    // if (fd == -1)
+    // {
+    //     printf("ERR: Radio hard reset pin open error.\n");
+    //     return EXIT_FAILURE;
+    // }
+
+    // //printf("pinVal.c_str = %s\n",pinVal.c_str());
+    // ret = write(fd, pinVal.c_str(), sizeof(pinVal.c_str()));
+    // //printf("ERR4 = %d\n",ret);
+    // close(fd);
+    return 0;
+}
+
+int flag = 0;
+int main(int argc, char* argv[]) 
 { 
-    int fd; 
+  // while (true){
+  //   if (flag==0)
+  //   {
+  //     control("98","1");
+  //     printf("val = 1\n");
+  //     sleep(3);
+  //     flag = 1;
+  //   }else if (flag==1)
+  //   {
+  //     control("98","0");
+  //     printf("val = 0\n");
+  //     sleep(3);
+  //     flag = 0;
+  //   }
+    
+  // }
 
-         //打开端口/sys/class/gpio# echo 48 > export
-         fd = open(SYSFS_GPIO_EXPORT, O_WRONLY);
-         if(fd == -1)
-         {
-                   printf("ERR: Radio hard reset pin open error.\n");
-                   return EXIT_FAILURE;
-         }
-         write(fd, SYSFS_GPIO_RST_PIN_VAL ,sizeof(SYSFS_GPIO_RST_PIN_VAL)); 
-         close(fd); 
+  control("98",argv[1]);
 
-         //设置端口方向/sys/class/gpio/gpio48# echo out > direction
-         fd = open(SYSFS_GPIO_RST_DIR, O_WRONLY);
-         if(fd == -1)
-         {
-                   printf("ERR: Radio hard reset pin direction open error.\n");
-                   return EXIT_FAILURE;
-         }
-         write(fd, SYSFS_GPIO_RST_DIR_VAL, sizeof(SYSFS_GPIO_RST_DIR_VAL)); 
-         close(fd); 
-
-         //输出复位信号: 拉高>100ns
-         fd = open(SYSFS_GPIO_RST_VAL, O_RDWR);
-         if(fd == -1)
-         {
-            printf("ERR: Radio hard reset pin value open error.\n");
-           return EXIT_FAILURE;
-         }       
-         
-                   write(fd, SYSFS_GPIO_RST_VAL_H, sizeof(SYSFS_GPIO_RST_VAL_H));
-                   usleep(3000000);
-                   write(fd, SYSFS_GPIO_RST_VAL_L, sizeof(SYSFS_GPIO_RST_VAL_L));
-                   usleep(3000000);
-        
-         close(fd);
-
-         printf("INFO: Radio hard reset pin value open error.\n");
-         return 0;
-
+  return 0;
 }  

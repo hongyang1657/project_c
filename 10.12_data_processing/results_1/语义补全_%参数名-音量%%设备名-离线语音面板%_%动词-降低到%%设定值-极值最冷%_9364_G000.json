@@ -1,0 +1,67 @@
+{
+	"create_time":	1603096817593,
+	"events":	[{
+			"example_speech_template":	"<%参数名-音量%><%设备名-离线语音面板%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-音量%",
+					"name":	"%参数名-音量%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-音量%"
+				}, {
+					"value_expression":	"%设备名-离线语音面板%",
+					"name":	"%设备名-离线语音面板%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-离线语音面板%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_4051D63E07B771880C59D7DD9ABF4055",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%动词-降低到%><%设定值-极值最冷%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-降低到%",
+					"value_source":	"svd",
+					"name":	"%动词-降低到%",
+					"example_value":	"%动词-降低到%"
+				}, {
+					"value_expression":	"%设定值-极值最冷%",
+					"value_source":	"svd",
+					"name":	"%设定值-极值最冷%",
+					"example_value":	"%设定值-极值最冷%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_温度调到",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"11/%设定值-极值最冷%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_温度调到",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

@@ -1,0 +1,34 @@
+{
+	"create_time":	1603095986776,
+	"events":	[{
+			"example_speech_template":	"<%动词-查询%><%功能名后缀-时间%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-查询%",
+					"name":	"%动词-查询%",
+					"value_source":	"svd",
+					"example_value":	"%动词-查询%"
+				}, {
+					"value_expression":	"%功能名后缀-时间%",
+					"name":	"%功能名后缀-时间%",
+					"value_source":	"svd",
+					"example_value":	"%功能名后缀-时间%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_信息查询_查询时间",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_信息查询_查询时间",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

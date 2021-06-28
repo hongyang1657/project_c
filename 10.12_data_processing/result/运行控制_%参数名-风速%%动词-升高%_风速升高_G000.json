@@ -1,0 +1,34 @@
+{
+	"create_time":	1603095986810,
+	"events":	[{
+			"example_speech_template":	"<%参数名-风速%><%动词-升高%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-风速%",
+					"name":	"%参数名-风速%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-风速%"
+				}, {
+					"value_expression":	"%动词-升高%",
+					"name":	"%动词-升高%",
+					"value_source":	"svd",
+					"example_value":	"%动词-升高%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_风速升高",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_风速升高",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

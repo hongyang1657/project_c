@@ -1,0 +1,71 @@
+{
+	"create_time":	1603096726318,
+	"events":	[{
+			"example_speech_template":	"<%参数名-色温%><%设备名-灯类%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-色温%",
+					"name":	"%参数名-色温%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-色温%"
+				}, {
+					"value_expression":	"%设备名-灯类%",
+					"name":	"%设备名-灯类%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-灯类%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_66D93C06CAAD754679669B32C947F2D8",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%动词-调小%><%设定值-数值%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-调小%",
+					"value_source":	"svd",
+					"name":	"%动词-调小%",
+					"example_value":	"%动词-调小%"
+				}, {
+					"value_expression":	"%设定值-数值%",
+					"value_source":	"svd",
+					"name":	"%设定值-数值%",
+					"example_value":	"%设定值-数值%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_亮度调暗",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%设备名-灯类%",
+					"name":	"%设备名%",
+					"value_source":	"context"
+				}, {
+					"value_expression":	"11/%设定值-数值%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_亮度调暗",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

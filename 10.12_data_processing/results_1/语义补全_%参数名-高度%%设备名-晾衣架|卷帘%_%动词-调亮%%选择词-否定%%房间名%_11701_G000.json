@@ -1,0 +1,72 @@
+{
+	"create_time":	1603097002748,
+	"events":	[{
+			"example_speech_template":	"<%参数名-高度%><%设备名-晾衣架_卷帘%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-高度%",
+					"name":	"%参数名-高度%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-高度%"
+				}, {
+					"value_expression":	"%设备名-晾衣架_卷帘%",
+					"name":	"%设备名-晾衣架_卷帘%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-晾衣架_卷帘%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_32158425E5A596D57B676E9101CBCDD3",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%动词-调亮%><%选择词-否定%><%房间名%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-调亮%",
+					"value_source":	"svd",
+					"name":	"%动词-调亮%",
+					"example_value":	"%动词-调亮%"
+				}, {
+					"value_expression":	"%选择词-否定%",
+					"value_source":	"svd",
+					"name":	"%选择词-否定%",
+					"example_value":	"%选择词-否定%"
+				}, {
+					"value_expression":	"%房间名%",
+					"value_source":	"svd",
+					"name":	"%房间名%",
+					"example_value":	"%房间名%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_亮度调亮",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"11/%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_亮度调亮",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

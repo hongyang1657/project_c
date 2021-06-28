@@ -1,0 +1,29 @@
+{
+	"create_time":	1603095987191,
+	"events":	[{
+			"example_speech_template":	"<%功能名后缀-温度%>",
+			"request_slots":	[{
+					"value_expression":	"%功能名后缀-温度%",
+					"name":	"%功能名后缀-温度%",
+					"value_source":	"svd",
+					"example_value":	"%功能名后缀-温度%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_信息查询_查询温度",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_信息查询_查询温度",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

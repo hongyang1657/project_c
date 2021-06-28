@@ -1,0 +1,66 @@
+{
+	"0": {
+		"intent": "CBD_上半身放平",
+		"multiple": "12",
+		"offset": 16,
+		"command_type": "run",
+		"motor_num": 4,
+		"motor": [{
+				"isControl": true,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			}
+		]
+	},
+	"1": {
+		"intent": "CBD_记录位置",
+		"multiple": "12",
+		"offset": 16,
+		"command_type": "record",
+		"motor_num": 4,
+		"motor": [{
+				"isControl": true,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			},
+			{
+				"isControl": false,
+				"control_type": "abs",
+				"data1": 255,
+				"data2": 0
+			}
+		]
+	}
+}

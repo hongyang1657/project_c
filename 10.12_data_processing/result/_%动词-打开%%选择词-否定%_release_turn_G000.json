@@ -1,0 +1,25 @@
+{
+	"create_time":	1603095986912,
+	"events":	[{
+			"example_speech_template":	"<%动词-打开%><%选择词-否定%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-打开%",
+					"name":	"%动词-打开%",
+					"value_source":	"svd",
+					"example_value":	"%动词-打开%"
+				}, {
+					"value_expression":	"%选择词-否定%",
+					"name":	"%选择词-否定%",
+					"value_source":	"svd",
+					"example_value":	"%选择词-否定%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_否定",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

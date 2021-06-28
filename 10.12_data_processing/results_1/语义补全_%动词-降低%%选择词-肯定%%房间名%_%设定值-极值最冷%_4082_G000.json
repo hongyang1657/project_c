@@ -1,0 +1,71 @@
+{
+	"create_time":	1603096334182,
+	"events":	[{
+			"example_speech_template":	"<%动词-降低%><%选择词-肯定%><%房间名%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-降低%",
+					"name":	"%动词-降低%",
+					"value_source":	"svd",
+					"example_value":	"%动词-降低%"
+				}, {
+					"value_expression":	"%选择词-肯定%",
+					"name":	"%选择词-肯定%",
+					"value_source":	"svd",
+					"example_value":	"%选择词-肯定%"
+				}, {
+					"value_expression":	"%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"svd",
+					"example_value":	"%房间名%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_4B958198F8041B1558D8EC5FB7A0EA81",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%设定值-极值最冷%>",
+			"request_slots":	[{
+					"value_expression":	"%设定值-极值最冷%",
+					"value_source":	"svd",
+					"name":	"%设定值-极值最冷%",
+					"example_value":	"%设定值-极值最冷%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_温度调到",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"11/%设定值-极值最冷%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}, {
+					"value_expression":	"1/%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_温度调到",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

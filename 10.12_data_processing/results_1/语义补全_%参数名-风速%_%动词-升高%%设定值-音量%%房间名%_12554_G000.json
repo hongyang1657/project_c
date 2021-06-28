@@ -1,0 +1,67 @@
+{
+	"create_time":	1603097052900,
+	"events":	[{
+			"example_speech_template":	"<%参数名-风速%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-风速%",
+					"name":	"%参数名-风速%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-风速%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_ABC1B8F85F367F24D042A9F262D39E64",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%动词-升高%><%设定值-音量%><%房间名%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-升高%",
+					"value_source":	"svd",
+					"name":	"%动词-升高%",
+					"example_value":	"%动词-升高%"
+				}, {
+					"value_expression":	"%设定值-音量%",
+					"value_source":	"svd",
+					"name":	"%设定值-音量%",
+					"example_value":	"%设定值-音量%"
+				}, {
+					"value_expression":	"%房间名%",
+					"value_source":	"svd",
+					"name":	"%房间名%",
+					"example_value":	"%房间名%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_风速升高",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"11/%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_风速升高",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

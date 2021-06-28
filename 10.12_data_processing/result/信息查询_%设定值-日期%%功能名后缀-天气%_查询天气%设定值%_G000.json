@@ -1,0 +1,38 @@
+{
+	"create_time":	1603095987054,
+	"events":	[{
+			"example_speech_template":	"<%设定值-日期%><%功能名后缀-天气%>",
+			"request_slots":	[{
+					"value_expression":	"%设定值-日期%",
+					"name":	"%设定值-日期%",
+					"value_source":	"svd",
+					"example_value":	"%设定值-日期%"
+				}, {
+					"value_expression":	"%功能名后缀-天气%",
+					"name":	"%功能名后缀-天气%",
+					"value_source":	"svd",
+					"example_value":	"%功能名后缀-天气%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_信息查询_查询天气",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%设定值-日期%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_信息查询_查询天气",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

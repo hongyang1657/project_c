@@ -9,17 +9,19 @@
 #include <arpa/inet.h>   
    
   
-#define DEST_PORT 8000   
-#define DSET_IP_ADDRESS  "127.0.0.1"   
-   
+#define DEST_PORT 57816   
+#define DSET_IP_ADDRESS "255.255.255.255"   
+ 
   
 int main()  
 {  
   /* socket文件描述符 */  
-  int sock_fd;  
+  int sock_fd,on=1;;  
   
   /* 建立udp socket */  
-  sock_fd = socket(AF_INET, SOCK_DGRAM, 0);  
+  sock_fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);  
+   
+  
   if(sock_fd < 0)  
   {  
     perror("socket");  
@@ -34,7 +36,8 @@ int main()
   addr_serv.sin_addr.s_addr = inet_addr(DSET_IP_ADDRESS);  
   addr_serv.sin_port = htons(DEST_PORT);  
   len = sizeof(addr_serv);  
-  
+
+  setsockopt(sock_fd,SOL_SOCKET,SO_REUSEADDR | SO_BROADCAST,&on,sizeof(on));
     
   int send_num;  
   int recv_num;  

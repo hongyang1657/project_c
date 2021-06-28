@@ -1,0 +1,10 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "istream": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}

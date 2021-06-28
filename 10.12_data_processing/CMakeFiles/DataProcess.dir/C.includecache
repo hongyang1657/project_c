@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hongy/C_C++/10.12_data_processing/cJSON.c
+string.h
+-
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+limits.h
+-
+ctype.h
+-
+locale.h
+-
+cJSON.h
+/home/hongy/C_C++/10.12_data_processing/cJSON.h
+
+/home/hongy/C_C++/10.12_data_processing/cJSON.h
+stddef.h
+-
+
