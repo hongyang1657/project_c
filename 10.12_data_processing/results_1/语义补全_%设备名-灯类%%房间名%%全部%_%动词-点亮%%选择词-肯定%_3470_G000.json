@@ -1,0 +1,76 @@
+{
+	"create_time":	1603096305160,
+	"events":	[{
+			"example_speech_template":	"<%设备名-灯类%><%房间名%><%全部%>",
+			"request_slots":	[{
+					"value_expression":	"%设备名-灯类%",
+					"name":	"%设备名-灯类%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-灯类%"
+				}, {
+					"value_expression":	"%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"svd",
+					"example_value":	"%房间名%"
+				}, {
+					"value_expression":	"%全部%",
+					"name":	"%全部%",
+					"value_source":	"svd",
+					"example_value":	"%全部%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_AE4E918A14C0BFCD5E4AA388D5001228",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%动词-点亮%><%选择词-肯定%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-点亮%",
+					"value_source":	"svd",
+					"name":	"%动词-点亮%",
+					"example_value":	"%动词-点亮%"
+				}, {
+					"value_expression":	"%选择词-肯定%",
+					"value_source":	"svd",
+					"name":	"%选择词-肯定%",
+					"example_value":	"%选择词-肯定%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_通用开关_全部打开",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%设备名-灯类%",
+					"name":	"%设备名%",
+					"value_source":	"context"
+				}, {
+					"value_expression":	"1/%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_通用开关_全部打开",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

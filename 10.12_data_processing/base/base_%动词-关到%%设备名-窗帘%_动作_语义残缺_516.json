@@ -1,0 +1,34 @@
+{
+	"create_time":	1603096973542,
+	"events":	[{
+			"example_speech_template":	"<%动词-关到%><%设备名-窗帘%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-关到%",
+					"name":	"%动词-关到%",
+					"value_source":	"svd",
+					"example_value":	"%动词-关到%"
+				}, {
+					"value_expression":	"%设备名-窗帘%",
+					"name":	"%设备名-窗帘%",
+					"value_source":	"svd",
+					"example_value":	"%设备名-窗帘%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_D7098F5050F017673319C5DB1473ADA7",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

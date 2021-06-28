@@ -1,0 +1,2 @@
+/usr/bin/ar qc libnet_config.a  CMakeFiles/net_config.dir/src/api_net_config.c.o CMakeFiles/net_config.dir/src/airkiss_src.c.o CMakeFiles/net_config.dir/capture/common.c.o CMakeFiles/net_config.dir/capture/osdep.c.o CMakeFiles/net_config.dir/capture/linux.c.o CMakeFiles/net_config.dir/capture/radiotap/radiotap-parser.c.o CMakeFiles/net_config.dir/utils/wifi_scan.c.o
+/usr/bin/ranlib libnet_config.a

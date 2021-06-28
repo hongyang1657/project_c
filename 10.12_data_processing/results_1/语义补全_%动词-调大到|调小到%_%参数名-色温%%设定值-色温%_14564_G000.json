@@ -1,0 +1,62 @@
+{
+	"create_time":	1603097162097,
+	"events":	[{
+			"example_speech_template":	"<%动词-调大到_调小到%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-调大到_调小到%",
+					"name":	"%动词-调大到_调小到%",
+					"value_source":	"svd",
+					"example_value":	"%动词-调大到_调小到%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_7741A64B1A68B7148FD53DD1C1B7059F",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%参数名-色温%><%设定值-色温%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-色温%",
+					"value_source":	"svd",
+					"name":	"%参数名-色温%",
+					"example_value":	"%参数名-色温%"
+				}, {
+					"value_expression":	"%设定值-色温%",
+					"value_source":	"svd",
+					"name":	"%设定值-色温%",
+					"example_value":	"%设定值-色温%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_色温调到",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"11/%设定值-色温%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_色温调到",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

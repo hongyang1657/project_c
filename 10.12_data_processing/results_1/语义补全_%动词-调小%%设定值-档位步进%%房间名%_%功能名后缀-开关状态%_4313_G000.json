@@ -1,0 +1,67 @@
+{
+	"create_time":	1603096363255,
+	"events":	[{
+			"example_speech_template":	"<%动词-调小%><%设定值-档位步进%><%房间名%>",
+			"request_slots":	[{
+					"value_expression":	"%动词-调小%",
+					"name":	"%动词-调小%",
+					"value_source":	"svd",
+					"example_value":	"%动词-调小%"
+				}, {
+					"value_expression":	"%设定值-档位步进%",
+					"name":	"%设定值-档位步进%",
+					"value_source":	"svd",
+					"example_value":	"%设定值-档位步进%"
+				}, {
+					"value_expression":	"%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"svd",
+					"example_value":	"%房间名%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_FD01601A49989AF1A3F093E8695CD5A5",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%功能名后缀-开关状态%>",
+			"request_slots":	[{
+					"value_expression":	"%功能名后缀-开关状态%",
+					"value_source":	"svd",
+					"name":	"%功能名后缀-开关状态%",
+					"example_value":	"%功能名后缀-开关状态%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_信息查询_查询开关状态",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%房间名%",
+					"name":	"%房间名%",
+					"value_source":	"context"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_信息查询_查询开关状态",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

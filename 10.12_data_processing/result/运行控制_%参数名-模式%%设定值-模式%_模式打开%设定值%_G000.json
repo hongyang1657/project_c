@@ -1,0 +1,38 @@
+{
+	"create_time":	1603095986674,
+	"events":	[{
+			"example_speech_template":	"<%参数名-模式%><%设定值-模式%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-模式%",
+					"name":	"%参数名-模式%",
+					"value_source":	"svd",
+					"example_value":	"%参数名-模式%"
+				}, {
+					"value_expression":	"%设定值-模式%",
+					"name":	"%设定值-模式%",
+					"value_source":	"svd",
+					"example_value":	"%设定值-模式%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_模式打开",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[{
+					"value_expression":	"1/%设定值-模式%",
+					"name":	"%设定值%",
+					"value_source":	"context"
+				}],
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_模式打开",
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}

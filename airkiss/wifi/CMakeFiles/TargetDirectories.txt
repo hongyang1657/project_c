@@ -1,0 +1,3 @@
+/home/hongy/C_C++/airkiss/wifi/CMakeFiles/rebuild_cache.dir
+/home/hongy/C_C++/airkiss/wifi/CMakeFiles/edit_cache.dir
+/home/hongy/C_C++/airkiss/wifi/CMakeFiles/net_config.dir

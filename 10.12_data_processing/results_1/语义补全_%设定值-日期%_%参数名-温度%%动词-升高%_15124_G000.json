@@ -1,0 +1,58 @@
+{
+	"create_time":	1603097226740,
+	"events":	[{
+			"example_speech_template":	"<%设定值-日期%>",
+			"request_slots":	[{
+					"value_expression":	"%设定值-日期%",
+					"name":	"%设定值-日期%",
+					"value_source":	"svd",
+					"example_value":	"%设定值-日期%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_语义补全",
+			"id":	1,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_询问及补全信息_C334A80CD69A18E7FF76037A794C4B0A",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn_0",
+			"type":	"a2u_api_call"
+		}, {
+			"example_speech_template":	"<%参数名-温度%><%动词-升高%>",
+			"request_slots":	[{
+					"value_expression":	"%参数名-温度%",
+					"value_source":	"svd",
+					"name":	"%参数名-温度%",
+					"example_value":	"%参数名-温度%"
+				}, {
+					"value_expression":	"%动词-升高%",
+					"value_source":	"svd",
+					"name":	"%动词-升高%",
+					"example_value":	"%动词-升高%"
+				}],
+			"intent_prefix":	"控客全屋智能语音面板_用户_运行控制_温度升高",
+			"id":	11,
+			"type":	"u2a_speech"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"控客全屋智能语音面板_动作_运行控制_温度升高",
+			"response_slots":	[{
+					"value_expression":	"成功",
+					"name":	"状态",
+					"value_source":	"const"
+				}],
+			"type":	"a2s"
+		}, {
+			"request_slots":	[],
+			"intent_prefix":	"release_turn",
+			"type":	"a2u_api_call"
+		}],
+	"labels":	[]
+}
